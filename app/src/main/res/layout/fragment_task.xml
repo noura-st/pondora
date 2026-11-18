@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F8F0">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Başlık -->
+        <TextView
+            android:id="@+id/tvDailyTask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Günün Görevi"
+            android:textSize="14sp"
+            android:textColor="#4CAF50"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+        <!-- Sandık animasyonu -->
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottieChest"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center_horizontal"
+            app:lottie_rawRes="@raw/chest_animation"
+            app:lottie_autoPlay="false"
+            app:lottie_loop="false"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Görev kartı -->
+        <androidx.cardview.widget.CardView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="24dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/tvTaskTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Görev yükleniyor..."
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#1B5E20"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:id="@+id/tvTaskDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="15sp"
+                    android:textColor="#555555"
+                    android:layout_marginBottom="12dp"/>
+
+                <TextView
+                    android:id="@+id/tvTaskDifficulty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Zorluk: Kolay"
+                    android:textSize="13sp"
+                    android:textColor="#888888"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Beklenen kaygı -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Görevi yapmadan önce: Ne kadar korkuyorsun?"
+            android:textSize="15sp"
+            android:textColor="#333333"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <SeekBar
+            android:id="@+id/seekBarExpected"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="10"
+            android:progress="5"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:id="@+id/tvExpectedValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5 / 10"
+            android:textSize="13sp"
+            android:textColor="#4CAF50"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Görevi yaptım butonu -->
+        <Button
+            android:id="@+id/btnTaskDone"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Görevi Yaptım!"
+            android:textSize="16sp"
+            android:backgroundTint="#4CAF50"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Kutlama animasyonu -->
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottieCelebration"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:lottie_rawRes="@raw/celebration"
+            app:lottie_autoPlay="false"
+            app:lottie_loop="false"
+            android:visibility="gone"/>
+
+        <!-- Gerçekleşen kaygı (başta gizli) -->
+        <LinearLayout
+            android:id="@+id/layoutActualAnxiety"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Görevi yaparken ne kadar korktun?"
+                android:textSize="15sp"
+                android:textColor="#333333"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
+
+            <SeekBar
+                android:id="@+id/seekBarActual"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="10"
+                android:progress="5"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:id="@+id/tvActualValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5 / 10"
+                android:textSize="13sp"
+                android:textColor="#4CAF50"
+                android:layout_marginBottom="24dp"/>
+
+            <Button
+                android:id="@+id/btnSaveScore"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Puanı Kaydet"
+                android:textSize="16sp"
+                android:backgroundTint="#2E7D32"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

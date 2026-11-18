@@ -1,0 +1,12 @@
+# Build configuration template.
+# Copy this file to `local.properties` and fill in the values you need.
+# `local.properties` is gitignored — never commit real keys.
+
+# Required: path to your Android SDK
+sdk.dir=C\:\\Users\\YOUR_USERNAME\\AppData\\Local\\Android\\Sdk
+
+# Optional: only needed for the weekly AI report overlay.
+# The offline loop (onboarding, daily tasks, XP, stats chart) works without them.
+OPENAI_API_KEY=
+ANTHROPIC_API_KEY=
+GEMINI_API_KEY=

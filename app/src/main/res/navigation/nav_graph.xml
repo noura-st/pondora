@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/pondFragment">
+
+    <fragment
+        android:id="@+id/pondFragment"
+        android:name="com.example.pondora.ui.pond.PondFragment"
+        android:label="Gölet"/>
+
+    <fragment
+        android:id="@+id/taskFragment"
+        android:name="com.example.pondora.ui.task.TaskFragment"
+        android:label="Görev"/>
+
+    <fragment
+        android:id="@+id/statsFragment"
+        android:name="com.example.pondora.ui.stats.StatsFragment"
+        android:label="İstatistik"/>
+
+</navigation>

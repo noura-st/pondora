@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Base.Theme.Pondora" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">#2E7D32</item>
+        <item name="colorPrimaryVariant">#1B5E20</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorSurface">#FFFFFF</item>
+        <item name="colorOnSurface">#000000</item>
+    </style>
+
+    <style name="Theme.Pondora" parent="Base.Theme.Pondora"/>
+
+    <style name="Theme.Pondora.SplashScreen" parent="Base.Theme.Pondora">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+    </style>
+</resources>

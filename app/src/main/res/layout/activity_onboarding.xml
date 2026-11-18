@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#E8F5E9"
+    android:padding="24dp"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Seni Tanıyalım"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#1B5E20"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sana en uygun görevleri verebilmek için birkaç soru soracağız"
+        android:textSize="14sp"
+        android:textColor="#4CAF50"
+        android:gravity="center"
+        android:layout_marginBottom="48dp"/>
+
+    <!-- Lottie yükleme animasyonu (sorular arası) -->
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieLoading"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        app:lottie_rawRes="@raw/loading_animation"
+        app:lottie_autoPlay="false"
+        app:lottie_loop="false"
+        android:visibility="gone"
+        android:layout_marginBottom="16dp"/>
+    <TextView
+        android:id="@+id/tvAnalyzing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cevabın analiz ediliyor..."
+        android:textSize="14sp"
+        android:textColor="#4CAF50"
+        android:textStyle="italic"
+        android:visibility="gone"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/tvQuestionNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Soru 1 / 5"
+        android:textSize="13sp"
+        android:textColor="#888888"
+        android:layout_marginBottom="16dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        android:layout_marginBottom="32dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:id="@+id/tvQuestion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Soru buraya gelecek"
+                android:textSize="18sp"
+                android:textColor="#1B5E20"
+                android:textStyle="bold"
+                android:layout_marginBottom="24dp"/>
+
+            <SeekBar
+                android:id="@+id/seekBarQuestion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="10"
+                android:progress="5"
+                android:layout_marginBottom="8dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hiç zorlanmam"
+                    android:textSize="11sp"
+                    android:textColor="#888888"/>
+
+                <TextView
+                    android:id="@+id/tvAnswerValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="5 / 10"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#4CAF50"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Çok zorlanırım"
+                    android:textSize="11sp"
+                    android:textColor="#888888"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Sonraki"
+        android:textSize="16sp"
+        android:backgroundTint="#2E7D32"/>
+
+</LinearLayout>
