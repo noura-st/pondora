@@ -31,11 +31,26 @@ and every 100 XP promotes the user to a new level title.
 
 ## Screens
 
-| Splash | Onboarding | Pond | Tasks | Stats |
-|---|---|---|---|---|
-| animated logo | 5 anxiety questions | XP bar, level, ducks | daily task + before/after slider | line chart + AI report |
+<p align="center">
+  <img src="docs/screenshots/01-onboarding.jpg" width="220" alt="Onboarding: 5 anxiety questions">
+  <img src="docs/screenshots/03-pond.jpg" width="220" alt="Pond: XP bar, level and duck count">
+  <img src="docs/screenshots/02-daily-task.jpg" width="220" alt="Daily task with a pre-task anxiety slider">
+</p>
+<p align="center">
+  <em>Onboarding → the pond with XP and ducks → a daily task</em>
+</p>
 
-<!-- Add screenshots/GIF here before pinning the repo: docs/screenshots/*.png -->
+<p align="center">
+  <img src="docs/screenshots/04-stats-chart.jpg" width="220" alt="Stats: expected vs actual anxiety line chart">
+  <img src="docs/screenshots/05-ai-report.jpg" width="220" alt="AI weekly report in Turkish">
+</p>
+<p align="center">
+  <em>Expected vs. actual anxiety, and the LLM-written weekly report</em>
+</p>
+
+The chart is the core of the app: the orange dashed line is the anxiety the user
+predicted, the green line is what they actually felt. The gap between them is the
+thing the app exists to make visible.
 
 ## Architecture
 
