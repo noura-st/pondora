@@ -4,8 +4,32 @@ An Android app that helps people with social anxiety practise exposure, one smal
 task at a time — and shows them the gap between the fear they expected and the fear
 they actually felt.
 
+<p align="center">
+  <img src="docs/screenshots/01-onboarding.jpg" width="200" alt="Onboarding: 5 anxiety questions">
+  <img src="docs/screenshots/03-pond.jpg" width="200" alt="Pond: XP bar, level and duck count">
+  <img src="docs/screenshots/02-daily-task.jpg" width="200" alt="Daily task with a pre-task anxiety slider">
+  <img src="docs/screenshots/04-stats-chart.jpg" width="200" alt="Stats: expected vs actual anxiety line chart">
+</p>
+
 > **Status:** academic project, not released. The AI report feature needs your own
 > API key to run (see [Configuration](#configuration)).
+
+## What I built
+
+- **A graded task system.** 19 hand-written exposure tasks at three difficulty
+  levels; the next task is chosen from the user's anxiety score and their progress.
+- **A before/after measurement loop.** The user rates the anxiety they expect and
+  the anxiety they actually felt, and the app plots the two lines against each other.
+  The gap between them is the product.
+- **Offline-first architecture.** Room is the source of truth; the only online
+  feature is an optional LLM-written weekly summary.
+
+`Kotlin` · `MVVM` · `Room` · `Navigation` · `Coroutines/Flow` · `Retrofit` · `MPAndroidChart` · `Lottie` · `WorkManager`
+
+![Expected vs actual anxiety](docs/screenshots/05-ai-report.jpg)
+
+The chart is the core of the app: the orange dashed line is the anxiety the user
+predicted, the green line is what they actually felt.
 
 ## Why
 
@@ -28,29 +52,6 @@ Pondora turns that into a daily loop:
 
 The pond is the progression metaphor: completing tasks earns XP and adds a duck,
 and every 100 XP promotes the user to a new level title.
-
-## Screens
-
-<p align="center">
-  <img src="docs/screenshots/01-onboarding.jpg" width="220" alt="Onboarding: 5 anxiety questions">
-  <img src="docs/screenshots/03-pond.jpg" width="220" alt="Pond: XP bar, level and duck count">
-  <img src="docs/screenshots/02-daily-task.jpg" width="220" alt="Daily task with a pre-task anxiety slider">
-</p>
-<p align="center">
-  <em>Onboarding → the pond with XP and ducks → a daily task</em>
-</p>
-
-<p align="center">
-  <img src="docs/screenshots/04-stats-chart.jpg" width="220" alt="Stats: expected vs actual anxiety line chart">
-  <img src="docs/screenshots/05-ai-report.jpg" width="220" alt="AI weekly report in Turkish">
-</p>
-<p align="center">
-  <em>Expected vs. actual anxiety, and the LLM-written weekly report</em>
-</p>
-
-The chart is the core of the app: the orange dashed line is the anxiety the user
-predicted, the green line is what they actually felt. The gap between them is the
-thing the app exists to make visible.
 
 ## Architecture
 
