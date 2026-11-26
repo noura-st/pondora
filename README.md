@@ -4,6 +4,8 @@ An Android app that helps people with social anxiety practise exposure, one smal
 task at a time — and shows them the gap between the fear they expected and the fear
 they actually felt.
 
+`Kotlin` · `MVVM` · `Room` · `Coroutines/Flow` · `Retrofit` · `WorkManager` · `MPAndroidChart` · `Lottie` · **35 classes** · **offline-first** · **18 seeded tasks**
+
 <p align="center">
   <img src="docs/screenshots/01-onboarding.jpg" width="200" alt="Onboarding: 5 anxiety questions">
   <img src="docs/screenshots/03-pond.jpg" width="200" alt="Pond: XP bar, level and duck count">
@@ -16,7 +18,7 @@ they actually felt.
 
 ## What I built
 
-- **A graded task system.** 19 hand-written exposure tasks at three difficulty
+- **A graded task system.** 18 hand-written exposure tasks at three difficulty
   levels; the next task is chosen from the user's anxiety score and their progress.
 - **A before/after measurement loop.** The user rates the anxiety they expect and
   the anxiety they actually felt, and the app plots the two lines against each other.
@@ -24,7 +26,7 @@ they actually felt.
 - **Offline-first architecture.** Room is the source of truth; the only online
   feature is an optional LLM-written weekly summary.
 
-`Kotlin` · `MVVM` · `Room` · `Navigation` · `Coroutines/Flow` · `Retrofit` · `MPAndroidChart` · `Lottie` · `WorkManager`
+
 
 ![Expected vs actual anxiety](docs/screenshots/05-ai-report.jpg)
 
@@ -41,7 +43,7 @@ rarely record what actually happened.
 Pondora turns that into a daily loop:
 
 1. **Onboarding** asks five questions and derives a starting anxiety level.
-2. **A daily task** is picked from a graded list (19 tasks, difficulty 1–3) matching
+2. **A daily task** is picked from a graded list (18 tasks, difficulty 1–3) matching
    that level and the user's progress.
 3. **Before and after** each task, the user rates the anxiety they expect and the
    anxiety they experienced.
@@ -109,7 +111,7 @@ also its main limitation.
 - Keys shipped inside an APK are extractable. For anything public-facing the model
   calls must move behind a small server that holds the key. The current design is
   acceptable for a local/portfolio build and is called out rather than hidden.
-- The task list is seeded statically (19 hand-written tasks, Turkish only). No
+- The task list is seeded statically (18 hand-written tasks, Turkish only). No
   localisation layer yet.
 - `HttpLoggingInterceptor` is `BASIC` in debug and `NONE` in release; the previous
   `BODY` level would have logged request headers, including API keys, to logcat.
