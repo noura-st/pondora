@@ -136,18 +136,14 @@ GEMINI_API_KEY=AIza...
 Empty values are fine: the app builds and the offline loop works, only the report
 button fails. A template is provided in `local.properties.example`.
 
-## How to run
+## Environment
 
-Requires Android Studio (Ladybug or newer) and JDK 17.
+Built against **Android Studio Ladybug**, **JDK 17**, `minSdk` 26, `targetSdk` 35.
+Gradle wrapper is included, so no separate Gradle install is needed. It compiles to
+a debug APK; there is no Play Store build.
 
-```bash
-git clone https://github.com/<username>/pondora.git
-cd pondora
-cp local.properties.example local.properties   # then fill in sdk.dir
-./gradlew assembleDebug
-```
-
-Or open the folder in Android Studio and press Run. `minSdk` is 26, `targetSdk` 35.
+The AI report feature reads its keys from `local.properties` (gitignored) — see
+[Configuration](#configuration). Everything else runs offline with no setup.
 
 ## Licence
 
